@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2? family= Montserrat:wght@200;400;600 & display=swap');
 
-:root {
-    --fondo1-color: rgb(253, 221, 246);
-}
 
 * {
     margin: 0;
@@ -13,16 +10,16 @@
 body {
     font-family: 'Montserrat';
     padding: 90px 20px 0;
-    background-color:  rgb(253, 221, 246);
 }
 
 
 .grid-container {
     display: grid;
     grid-template-areas:
-        'header header header header'
-        'main   main   main   main'
-        'footer footer footer footer';
+    'header  header   header    header'
+    'main    main     main      sidebar'
+    'main    main     main      sidebar'
+    'footer  footer   footer    sidebar';
     gap: 10px;
     padding: 10px;
 }
@@ -36,6 +33,7 @@ body {
     left: 0;
     display: flex;
     width: auto;
+    
 }
 
 .nav {
@@ -78,8 +76,9 @@ a {
 }
 
 a:hover {
-    background-color: rgb(255, 138, 226);
+    background-color:  #aaf0ff;
 }
+
 
 /* MAIN */
 .grid-container>.main {
@@ -93,7 +92,7 @@ a:hover {
     font-size: 13px;
     letter-spacing: 1px;
     color: rgb(0, 0, 0);
-    grid-template-columns: repeat(2, ifr);
+    grid-template-columns: repeat(3, ifr);
     margin-top: 20px;
 }
 
@@ -104,7 +103,7 @@ a:hover {
     letter-spacing: 2px;
     padding: 20px;
     gap: 20px;
-    grid-template-columns: repeat(2, ifr);
+    grid-template-columns: repeat(3, ifr);
     margin-top: 10px;
     text-align: center;
 }
@@ -125,6 +124,7 @@ p{
     color: black;
     padding: 3px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .parrafo {
@@ -137,13 +137,11 @@ p{
 }
 
 .form {
-    margin: auto;
-    padding: 20px;
+    padding: 40px;
     margin-top: 20px;
-    padding-bottom: 40px;
     border-radius: 3px;
     display: block;
-    box-sizing: border-box;
+    justify-content: center;
 
 }
 
@@ -163,14 +161,26 @@ p{
     font-size: 30;
     font-weight: bolder;
     padding: 20px;
+    margin-top: 20px;
 }
 
 .fotos {
     padding: 10px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
-
+/* ASIDE */
+.grid-container>.sidebar {
+    grid-area: sidebar;
+    background-image: linear-gradient(to bottom, #aaf0ff, #a3e4ff, #a8d6ff, #b6c7fe, #c8b6f0, #d4b5ea, #deb5e4, #e6b6de, #ecc7e7, #f2d7ef, #f8e8f7, #fff8ff);
+    text-align: center;
+    margin: 20px 0;
+}
+.fotos2{
+ padding: 5px;
+ margin-top: 10px;
+}
 /* FOOTER */
 .grid-container>.footer {
     grid-area: footer;
@@ -183,28 +193,44 @@ p{
 }
 
 /* media querys */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body {
+      background-color: blue;
         padding: 70px;
     }
-
-    .header {
+    
+.grid-container {
+    display: grid;
+    grid-template-areas:
+    'header'
+    'main '
+    'sidebar'
+    'footer';
+}
+    .header{
         grid-area: header;
+        display: flex;
+        justify-content: center;
     }
 
-    .main {
+    .main{
         grid-area: main;
+        display: flex;
+        justify-content: center;
     }
-
+    .sidebar{
+        grid-area: sidebar;
+        display: flex;
+        justify-content: center;
+    }
     .footer {
         grid-area: footer;
+        flex-direction: column;
     }
 
     .grid-container {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 120px;
         padding-top: 20px;
-        padding-bottom: 20px;
         flex-direction: column-reverse;
         justify-content: center;
     }
@@ -293,8 +319,11 @@ p{
     }
 
     .reel {
-        padding-top: 25px;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
         padding-bottom: 25px;
+        margin: 50px;
         padding: 20px;
     }
 
@@ -302,4 +331,31 @@ p{
         flex-direction: column;
         padding: 20px;
     }
+    .sidebar {
+       flex-direction: column;
+    }
+    .fotos2{
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px;
+    }
+}/* media querys */
+@media only screen and (max-width: 1024px) {
+    body {
+        background-color: red;
+    }
+    .header{
+        grid-area: header;
+    }
+
+    .main{
+        grid-area: main;
+    }
+    .sidebar{
+        grid-area: sidebar;
+    }
+    .footer {
+        grid-area: footer;
+    }
+   
 }
