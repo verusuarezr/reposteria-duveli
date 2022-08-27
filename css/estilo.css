@@ -7,13 +7,13 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     font-family: 'Montserrat';
     padding: 90px 20px 0;
 }
 
 
-.grid-container {
+.grid-container{
     display: grid;
     grid-template-areas:
     'header  header   header    header'
@@ -36,24 +36,24 @@ body {
     
 }
 
-.nav {
+.nav{
     display: flex;
     justify-content: space-between;
     max-width: 992px;
 }
 
-.logo {
+.logo{
     justify-content: space-between;
     padding: 0 40px;
 }
 
 .openMenu,
-.closeMenu {
+.closeMenu{
     display: none;
 }
 
 li,
-a {
+a{
     list-style: none;
     text-decoration: none;
     color: black;
@@ -62,26 +62,26 @@ a {
     padding-top: 80px;
 }
 
-.nav-menu {
+.nav-menu{
     display: flex;
     justify-content: space-between;
     font-size: 18px;
     width: max-content;
 }
 
-a {
+a{
     padding: 8px 12px;
     border-radius: 4px;
     transition: 0.5s;
 }
 
-a:hover {
+a:hover{
     background-color:  #aaf0ff;
 }
 
 
 /* MAIN */
-.grid-container>.main {
+.grid-container>.main{
     grid-area: main;
     text-align: center;
 }
@@ -192,10 +192,7 @@ p{
     padding: 10px;
 }
 /* media querys */
-@media(max-width:1024px)  { 
-    body { 
-       background-color: rgb(0, 0, 0);
-    }
+@media screen and (max-width:1024px){ 
     .grid-container {
         display: grid;
         grid-template-areas:
@@ -204,15 +201,12 @@ p{
         'main    main     main      sidebar'
         'footer  footer   footer    sidebar';
         gap: 10px;
-        padding: 10px;
     }
+
 }
 
 /* media querys */
-@media(max-width:768px)  { 
-     body { 
-        background-color: rgb(255, 25, 25);
-     }
+@media screen and (max-width:768px){ 
      .grid-container {
         display: grid;
         grid-template-areas:
@@ -222,6 +216,7 @@ p{
         'footer';
         gap: 5px;
         padding: auto;
+        margin: auto;
     }
     .header{
         grid-area: header;
